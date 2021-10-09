@@ -30,7 +30,7 @@ namespace SeminarioC_
     {
         void GetSalary();
     }
-    public interface ITeaching
+    public interface ITeach
     {
         void GiveClass();
     }
@@ -39,7 +39,7 @@ namespace SeminarioC_
         void TakeClass();
     }
 
-    public class ProfessorAssistance : Student, ITeaching
+    public class AssistantProfessor : Student, ITeach
     {
         public ProfessorAssistance(string name):base(name)
         {
@@ -63,7 +63,7 @@ namespace SeminarioC_
         }
     }
 
-    public class Professor : Worker, ITeaching
+    public class Professor : Worker, ITeach
     {
         public Professor(string name) : base(name)
         {
