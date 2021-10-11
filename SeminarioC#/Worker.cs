@@ -6,7 +6,7 @@ namespace SeminarioC_
         {
             
         }
-        public void GetSalary()
+        public virtual void GetSalary()
         {
             return;
         }
