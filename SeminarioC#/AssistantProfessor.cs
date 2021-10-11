@@ -6,7 +6,7 @@ namespace SeminarioC_
         {
             
         }
-        public void GiveClass()
+        public virtual void GiveClass()
         {
             return;
         }
