@@ -30,11 +30,11 @@ namespace SeminarioC_
         {
             if(args[0] == "inciso-b")
             {//Inciso b
-                Person [] temp=new Person [3]
+                List<Professor> temp=new List<Professor> ()
                     {
-                        new Person("Jose"),
-                        new Person("Luis"),
-                        new Person("Carlo")
+                        new Professor("Jose"),
+                        new Professor("Luis"),
+                        new Professor("Carlo")
                     };
                 PrintPeople(temp);
                 //Output:
