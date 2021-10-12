@@ -18,7 +18,7 @@ namespace SeminarioC_
         static void PrintStudents(IEnumerable<Student> students, IComparer<Student> comparer) 
         {
             foreach (var student in students.OrderBy(x => x, comparer))
-            Console.WriteLine(student.Name);
+                Console.WriteLine(student.Name);
         } 
         //Inciso d
         static void PrintByConsole(Action<Action<Person>> person) 
