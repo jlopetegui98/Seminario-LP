@@ -6,3 +6,5 @@ Varianza, Covarianza, Herencia y Polimorfismo en C#
 1. Ejecutar ```dotnet restore```
 1. Si se desea ejecutar el código asociado al inciso x, donde x puede ser b,c,d,e:
     1. Ejecutar ```dotnet run inciso-x```
+1. Para ejecutar el código del ejemplo de polimorfismo:
+    1. Ejecutar ```dotnet run polimorfismo```
