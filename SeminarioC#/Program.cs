@@ -10,9 +10,9 @@ namespace SeminarioC_
         public static void PrintPeople (IEnumerable<Person> people)
         {
             foreach(var p in people)
-                {
-                    Console.WriteLine(p.Name);
-                }
+            {
+                Console.WriteLine(p.Name);
+            }
 
         }
         //Inciso c 
@@ -25,11 +25,18 @@ namespace SeminarioC_
         static void PrintByConsole(Action<Action<Person>> person) 
         {
             person(x => Console.WriteLine(x.Name));
-        }              
+        }
+        //Inciso e
+        static void PrintStudentsOnly(IEnumerable<object> people) 
+        {
+            foreach (var student in people.Where(x => x.GetType() == typeof(Student)))
+                Console.WriteLine(student.Name);
+        }               
         static void Main(string[] args)
         {
             if(args[0] == "inciso-b")
-            {//Inciso b
+            {
+                //Inciso b
                 List<Professor> temp=new List<Professor> ()
                     {
                         new Professor("Jose"),
@@ -42,32 +49,35 @@ namespace SeminarioC_
                 //Luis
                 //Carlo
             }
-            else
+            else if(args[0] == "inciso-c")
             {
-                if (args[0] == "inciso-c")
-                {
-                    Student a = new Student("Alberto Pérez Garrido");
-                    Student b = new Student("Alberto González Gárcía");
-                    Student c = new Student("Abel Cruz Batista");
-                    List<Student> list = new List<Student>(){a,b,c};
-                    PrintStudents(list, new PersonComparerByName());
-                    // Output:
-                    //Abel Cruz Batista
-                    //Alberto Pérez Garrido
-                    //Roberto González Gárcía
-                }
-                else 
-                {
-                    if(args[0] == "inciso-d")
-                    {
-                        PrintByConsole(x=>x(new Student("Pedro")));
-                        //Output:
-                        //Pedro
-                    }
-                }
-
+                Student a = new Student("Alberto Pérez Garrido");
+                Student b = new Student("Alberto González Gárcía");
+                Student c = new Student("Abel Cruz Batista");
+                List<Student> list = new List<Student>(){a,b,c};
+                PrintStudents(list, new PersonComparerByName());
+                // Output:
+                //Abel Cruz Batista
+                //Alberto Pérez Garrido
+                //Roberto González Gárcía
             }
-            
+            else if(args[0] == "inciso-d")
+            {
+                PrintByConsole(x=>x(new Student("Pedro")));
+                //Output:
+                //Pedro
+            }
+            else if(args[0] == "inciso-e")
+            {
+                PrintStudentsOnly(
+                    List<Person> temp = new List<Person>()
+                    {
+                        new Professor("Jose"),
+                        new Student("Luis"),
+                        new AssistantProfessor("Carlos")
+                    }
+                );
+            }
         }
     }
 }
