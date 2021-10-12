@@ -35,7 +35,6 @@ namespace SeminarioC_
         {
             if(args[0] == "polimorfismo")
             {
-                //Inciso b
                 Worker[] workers=new Worker[2]
                     {
                         new Worker("Jose"),
