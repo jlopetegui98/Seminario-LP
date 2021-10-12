@@ -13,7 +13,6 @@ namespace SeminarioC_
             {
                 Console.WriteLine(p.Name);
             }
-
         }
         //Inciso c 
         static void PrintStudents(IEnumerable<Student> students, IComparer<Student> comparer) 
@@ -30,7 +29,7 @@ namespace SeminarioC_
         static void PrintStudentsOnly(IEnumerable<object> people) 
         {
             foreach (var student in people.Where(x => x.GetType() == typeof(Student)))
-                Console.WriteLine(student.Name);
+                Console.WriteLine(((Person)student).Name);
         }               
         static void Main(string[] args)
         {
@@ -69,14 +68,13 @@ namespace SeminarioC_
             }
             else if(args[0] == "inciso-e")
             {
-                PrintStudentsOnly(
-                    List<Person> temp = new List<Person>()
+                List<Person> list = new List<Person>()
                     {
                         new Professor("Jose"),
                         new Student("Luis"),
                         new AssistantProfessor("Carlos")
-                    }
-                );
+                    };
+                PrintStudentsOnly(list);
             }
         }
     }
