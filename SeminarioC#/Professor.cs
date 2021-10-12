@@ -6,8 +6,12 @@ namespace SeminarioC_
         { }
         public Professor(string name) : base(name)
         {
+
         }
 
+        public override void GetSalary(){
+            System.Console.WriteLine("El profesor cobra 5000 cup");
+        }
         public virtual void GiveClass()
         {
             return;

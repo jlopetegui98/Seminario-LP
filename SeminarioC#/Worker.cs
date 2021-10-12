@@ -9,7 +9,7 @@ namespace SeminarioC_
         }
         public virtual void GetSalary()
         {
-            return;
+            System.Console.WriteLine("El trabajador cobra 3000 cup");
         }
     }
 }

@@ -33,7 +33,21 @@ namespace SeminarioC_
         }               
         static void Main(string[] args)
         {
-            if(args[0] == "inciso-b")
+            if(args[0] == "polimorfismo")
+            {
+                //Inciso b
+                Worker[] workers=new Worker[2]
+                    {
+                        new Worker("Jose"),
+                        new Professor("Luis"),
+                    };
+                for (int i = 0; i < workers.Length; i ++)
+                    workers[i].GetSalary();
+                //Output    
+                //El trabajador cobra 3000 cup
+                //El profesor cobra 5000 cup                
+            }
+            else if(args[0] == "inciso-b")
             {
                 //Inciso b
                 List<Professor> temp=new List<Professor> ()
